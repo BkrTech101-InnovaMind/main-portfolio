@@ -7,8 +7,9 @@ export default function Home() {
       <Head>
         <meta charset='UTF-8' />
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-        {/* <meta name='viewport' content='width=device-width, initial-scale=1.0' /> */}
-        <title>Under Maintenance</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='icon' href='/logo.png' />
+        <title>Abobakr Portfolio</title>
       </Head>
 
       <section className='bg-gradient'>
