@@ -21,7 +21,7 @@ export default function Home() {
               </h1>
               <p className='lg:w-5/6'>
                 I have done all the technical improvements and will be back very
-                soon. Thank you for your patience!!
+                soon. Thank you for your patience!
               </p>
             </div>
 
