@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav className='text-2xl'>
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between items-center pl-4'>
         {/* Logo */}
         <div className='text-[#f9f9f9]'>
           {/* Name */}
@@ -30,7 +30,9 @@ export default function Navbar() {
             <h2>{logo.logo}</h2>
           </Link>
           {/* Description */}
-          <h3 className='text-end font-normal text-[#9897FC]'>web_dev</h3>
+          <h3 className='text-end font-normal text-[#9897FC] leading-3'>
+            web_dev
+          </h3>
         </div>
         {/* Large Screens */}
         <div className='hidden lg:block'>
@@ -69,9 +71,8 @@ export default function Navbar() {
           />
         </span>
       </div>
-      <hr />
       {isOpen && (
-        <ul className='animate-slide-down bg-[#212121]'>
+        <ul className='animate-slide-down bg-[#212121] mt-5'>
           {links
             .filter((link) => link.name)
             .map((link) => (
