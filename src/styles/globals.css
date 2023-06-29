@@ -1,8 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: coding_font;
+  src: url("../../fonts/VT323-Regular.ttf") format("opentype");
+}
 
 body {
   color: #cac168;
   background: #212121;
+  @apply font-primary;
 }
