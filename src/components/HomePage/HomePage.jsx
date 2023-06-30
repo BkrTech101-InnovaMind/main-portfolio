@@ -1,15 +1,21 @@
-import Layout from "../Layout/Layout"
+import Link from "next/link"
 import TypeWriter from "../TypeWriter"
 
 export default function HomePage() {
   return (
-    <TypeWriter
-      startingTimer={10}
-      endingTimer={2000}
-      isSingleText={true}
-      texts={["Welcome to my portfolio!"]}
-      textColor='#9f8'
-      backGroundColor='#9f8f1f'
-    />
+    <section className='mt-24 text-center'>
+      <h2 className='text-center text-xl text-slate-200'>
+        {"//"} HI, I&apos;M ABOBAKR, A...
+      </h2>
+      <TypeWriter
+        isSingleText={false}
+        endingTimer={2000}
+        texts={["front-end developer", "mobile apk developer", "web designer"]}
+      />
+      <h2 className='inline-block rotate-90 text-3xl my-10'>
+        <Link href='#'>{"==>"}</Link>
+      </h2>
+      <div className='h-48 bg-hero-img bg-scroll'></div>
+    </section>
   )
 }
