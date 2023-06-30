@@ -7,6 +7,7 @@ export default function TypeWriter({
   isSingleText = true,
   textColor,
   backGroundColor,
+  textWidth = "text-[15vh]",
 }) {
   const [text, setText] = useState("")
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
@@ -59,14 +60,14 @@ export default function TypeWriter({
     <div
       className={`${
         isSingleText ? "border-[0.1px] border-gray-700" : ""
-      } text-center cursor-text text-[15vh]`}
+      } text-center cursor-text ${textWidth}`}
       style={{
         backgroundColor: isSingleText && isHovering ? backGroundColor : "",
       }}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      <h1 style={{ color: textColor }}>
+      <h1 style={{ color: isSingleText ? textColor : "" }}>
         <span className='text-slate-200'>{'{" '}</span>
         {`_${text}`} <span className='animate-cursor font-extrabold'>|</span>
         <span className='text-slate-200'>{' "}'}</span>

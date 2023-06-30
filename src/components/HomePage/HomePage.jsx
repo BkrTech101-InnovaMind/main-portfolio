@@ -9,8 +9,8 @@ export default function HomePage() {
         endingTimer={2000}
         isSingleText={true}
         texts={["Welcome to my portfolio!"]}
-        textColor={"#9f8"}
-        backGroundColor={"#9f8f1f"}
+        textColor='#9f8'
+        backGroundColor='#9f8f1f'
       />
     </Layout>
   )
