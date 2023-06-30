@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx"
 
 export default function Navbar() {
   const links = [
-    { logo: "Abobakr", href: "/" },
+    { logo: "BKR", href: "/" },
     { name: "_home", href: "/" },
     { name: "_about", href: "/about" },
     { name: "_portfolio", href: "/portfolio" },

@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from "react"
 
 export default function TypeWriter({
   texts = [],
-  startingTimer,
   endingTimer,
   isSingleText = true,
   textColor,
@@ -43,8 +42,6 @@ export default function TypeWriter({
           }, 100 * (2 * currentPhrase.length - i))
         }
 
-        await sleep(startingTimer)
-
         timerId = setTimeout(() => {
           setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length)
         }, 100 * (3 * currentPhrase.length))
@@ -53,13 +50,13 @@ export default function TypeWriter({
 
     typewriter()
     return () => clearTimeout(timerId)
-  }, [currentPhraseIndex, phrases, startingTimer, endingTimer, isSingleText])
+  }, [currentPhraseIndex, phrases, endingTimer, isSingleText])
 
   return (
     <div
       className={`${
         isSingleText ? "border-[1px] border-gray-700" : ""
-      } text-center cursor-text text-[150%] md:text-[250%] lg:text-[400%]`}
+      } text-center cursor-text text-[200%] md:text-[400%] lg:text-[700%]`}
       style={{
         backgroundColor: isSingleText && isHovering ? backGroundColor : "",
       }}
@@ -68,7 +65,8 @@ export default function TypeWriter({
     >
       <h1 style={{ color: isSingleText ? textColor : "" }}>
         <span className='text-slate-200'>{'{" '}</span>
-        {`_${text}`} <span className='animate-cursor font-extrabold'>|</span>
+        {`_${text}`}
+        <span className='animate-cursor font-extrabold'>|</span>
         <span className='text-slate-200'>{' "}'}</span>
       </h1>
     </div>
