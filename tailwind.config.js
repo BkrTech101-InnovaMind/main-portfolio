@@ -12,11 +12,16 @@ module.exports = {
       },
       animation: {
         "slide-down": "slide-down 0.5s ease-out",
+        cursor: "blink 1s linear infinite",
       },
       keyframes: {
         "slide-down": {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(0)" },
+        },
+        blink: {
+          "0%": { opacity: "100%" },
+          "50%": { opacity: "0%" },
         },
       },
     },
