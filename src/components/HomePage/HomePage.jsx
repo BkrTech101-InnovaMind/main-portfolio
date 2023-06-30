@@ -10,7 +10,7 @@ export default function HomePage() {
         isSingleText={true}
         texts={["Welcome to my portfolio!"]}
         textColor={"#9f8"}
-        backGroundColor={"#000"}
+        backGroundColor={"#9f8f1f"}
       />
     </Layout>
   )

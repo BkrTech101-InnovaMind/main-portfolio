@@ -11,6 +11,7 @@ export default function TypeWriter({
   const [text, setText] = useState("")
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
   const phrases = useMemo(() => texts, [texts])
+  const [isHovering, setIsHovering] = useState(false)
 
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms))
@@ -57,12 +58,15 @@ export default function TypeWriter({
   return (
     <div
       className={`${
-        isSingleText
-          ? `border-[0.1px] border-gray-700 hover:bg-[${backGroundColor}]`
-          : ""
+        isSingleText ? "border-[0.1px] border-gray-700" : ""
       } text-center cursor-text text-[15vh]`}
+      style={{
+        backgroundColor: isSingleText && isHovering ? backGroundColor : "",
+      }}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
     >
-      <h1 className={`text-[${textColor}]`}>
+      <h1 style={{ color: textColor }}>
         <span className='text-slate-200'>{'{" '}</span>
         {`_${text}`} <span className='animate-cursor font-extrabold'>|</span>
         <span className='text-slate-200'>{' "}'}</span>
