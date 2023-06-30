@@ -21,7 +21,7 @@ export default function Layout({ children }) {
   return (
     <>
       <div className='flex h-screen'>
-        <aside className='border-r border-white h-screen px-4 text-lg'>
+        <aside className='border-r border-[1px] border-gray-700 h-screen px-4 text-lg'>
           {numbers.map((number) => (
             <div key={number}>{number}</div>
           ))}

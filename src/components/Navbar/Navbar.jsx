@@ -76,7 +76,7 @@ export default function Navbar() {
           {links
             .filter((link) => link.name)
             .map((link) => (
-              <li key={link.name}>
+              <li key={link.name} className='border-b border-gray-700'>
                 <Link
                   className={`${
                     router.pathname === link.href
@@ -87,7 +87,6 @@ export default function Navbar() {
                 >
                   {link.name}
                 </Link>
-                <hr />
               </li>
             ))}
         </ul>
