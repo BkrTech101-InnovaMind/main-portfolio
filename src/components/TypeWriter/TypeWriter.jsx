@@ -7,7 +7,6 @@ export default function TypeWriter({
   isSingleText = true,
   textColor,
   backGroundColor,
-  textWidth = "text-[6vw]",
 }) {
   const [text, setText] = useState("")
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0)
@@ -60,7 +59,7 @@ export default function TypeWriter({
     <div
       className={`${
         isSingleText ? "border-[1px] border-gray-700" : ""
-      } text-center cursor-text ${textWidth}`}
+      } text-center cursor-text text-[150%] md:text-[250%] lg:text-[400%]`}
       style={{
         backgroundColor: isSingleText && isHovering ? backGroundColor : "",
       }}
