@@ -20,12 +20,14 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <div className='flex h-screen  max-w-screen-2xl mx-auto'>
-        <aside className='border-r border-[1px] border-gray-700 h-screen px-4 text-lg'>
-          {numbers.map((number) => (
-            <div key={number}>{number}</div>
-          ))}
-        </aside>
+      <div className='flex h-screen max-w-screen-2xl mx-auto'>
+        <div className='mr-10 md:mr-12 '>
+          <aside className='border-r border-[1px] border-gray-700 h-screen px-4 text-lg fixed'>
+            {numbers.map((number) => (
+              <div key={number}>{number}</div>
+            ))}
+          </aside>
+        </div>
         <span className='flex-1 pr-10 pt-5'>
           <Navbar />
           <main className='mt-10'>{children}</main>
