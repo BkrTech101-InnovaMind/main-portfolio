@@ -1,22 +1,18 @@
 import Link from "next/link"
 import Typewriter from "typewriter-effect"
+import { homePageContent } from "./homePageContent"
 
 export default function HomePage() {
+  const { introduction, roles } = homePageContent
   return (
     <section className='mt-24 text-center'>
       <div className='hero_section'>
-        <h2 className='text-center text-xl text-slate-200'>
-          {"//"} HI, I&apos;M ABOBAKR, A...
-        </h2>
+        <h2 className='text-center text-xl text-slate-200'>{introduction}</h2>
         <h1 className='text-3xl text-[200%] md:text-[400%] lg:text-[700%] mt-8 flex justify-center'>
           <span className='text-slate-200'>{'{" '}</span>
           <Typewriter
             options={{
-              strings: [
-                "_front-end developer",
-                "_mobile apk developer",
-                "_web designer",
-              ],
+              strings: roles,
               autoStart: true,
               loop: true,
             }}
