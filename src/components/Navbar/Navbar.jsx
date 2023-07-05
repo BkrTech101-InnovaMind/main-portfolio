@@ -72,7 +72,7 @@ export default function Navbar() {
         </span>
       </div>
       {isOpen && (
-        <ul className='animate-slide-down bg-[#212121] mt-5'>
+        <ul className='animate-slide-down bg-[#212121] mt-5 fixed w-full z-10'>
           {links
             .filter((link) => link.name)
             .map((link) => (
