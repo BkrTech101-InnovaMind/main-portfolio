@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Navbar from "../Navbar"
 
 export default function Layout({ children }) {
   const [numbers, setNumbers] = useState([])
+  const asideRef = useRef(null)
 
   useEffect(() => {
     const handleResize = () => {
-      const windowHeight = window.innerHeight
+      const childrenHeight = asideRef.current.scrollHeight
       setNumbers(
-        Array.from({ length: Math.floor(windowHeight) }, (_, i) => i + 1)
+        Array.from(
+          { length: Math.floor(childrenHeight / 21.3) },
+          (_, i) => i + 1
+        )
       )
     }
 
@@ -19,17 +23,17 @@ export default function Layout({ children }) {
   }, [])
 
   return (
-    <div className='flex h-screen max-w-screen-2xl mx-auto'>
-      <div className='mr-9'>
-        <aside className='border-r-[1px] border-gray-700 h-screen px-2 py-4 fixed left-0'>
-          {numbers.map((number) => (
-            <h1 key={number}>{number}</h1>
-          ))}
-        </aside>
-      </div>
+    <div className='flex max-w-screen-2xl mx-auto'>
+      <aside className='border-r-[1px] border-gray-700 px-4 py-4'>
+        {numbers.map((number) => (
+          <h1 key={number}>{number}</h1>
+        ))}
+      </aside>
       <span className='flex-1 pr-10 pt-5'>
         <Navbar />
-        <main className='mt-10'>{children}</main>
+        <main className='mt-10' ref={asideRef}>
+          {children}
+        </main>
       </span>
     </div>
   )
