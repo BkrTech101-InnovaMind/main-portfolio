@@ -11,3 +11,14 @@ body {
   background: #212121;
   @apply font-primary;
 }
+
+.pixels_effect {
+  opacity: 0.05;
+  background-image: radial-gradient(
+    ellipse farthest-corner at 7px 7px,
+    #ffffff,
+    #ffffff 50%,
+    #000000 50%
+  );
+  background-size: 7px 7px;
+}
