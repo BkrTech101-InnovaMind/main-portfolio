@@ -12,5 +12,10 @@
   "portfolio_section": {
     "title": "<portfolio>",
     "leading": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam hic ullam officia voluptates nostrum commodi iusto ut blanditiis. "
+  },
+  "services_section": {
+    "title": "<services>",
+    "leading": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam hic ullam officia voluptates nostrum commodi iusto ut blanditiis. ",
+    "roles": ["_front-end developer", "_mobile apk developer", "_web designer"]
   }
 }

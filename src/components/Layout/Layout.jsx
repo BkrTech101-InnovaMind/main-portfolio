@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       const childrenHeight = asideRef.current.scrollHeight
       setNumbers(
         Array.from(
-          { length: Math.floor(childrenHeight / 21.3) },
+          { length: Math.floor(childrenHeight / 21.6) },
           (_, i) => i + 1
         )
       )
