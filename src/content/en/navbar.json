@@ -1,0 +1,14 @@
+{
+  "logo": {
+    "title": "// BKR",
+    "href": "/"
+  },
+  "links": [
+    { "name": "_home", "href": "/" },
+    { "name": "_about", "href": "/about" },
+    { "name": "_portfolio", "href": "/portfolio" },
+    { "name": "_services", "href": "/services" },
+    { "name": "_resume", "href": "/resume" },
+    { "name": "_contact", "href": "/contact" }
+  ]
+}
