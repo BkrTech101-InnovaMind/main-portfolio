@@ -5,10 +5,30 @@ import { useState } from "react"
 import { AiOutlineClose } from "react-icons/ai"
 import { RxHamburgerMenu } from "react-icons/rx"
 
+/**
+ * Renders the navbar component.
+ * @returns {JSX.Element} The rendered navbar.
+ */
 export default function Navbar() {
-  const router = useRouter()
-  const [isOpen, setIsOpen] = useState(false)
-  const { logo, links } = navbar
+  const router = useRouter() // Get the router object
+  const [isOpen, setIsOpen] = useState(false) // State to track if the menu is open
+  const { logo, links } = navbar // Destructure logo and links from navbar
+
+  /**
+   * Toggles the menu open and closed.
+   */
+  const handleMenuClick = () => {
+    setIsOpen(!isOpen) // Toggle the value of isOpen
+  }
+
+  /**
+   * Checks if a link is active based on the current router path.
+   * @param {Object} link - The link object.
+   * @returns {boolean} True if the link is active, false otherwise.
+   */
+  const isActiveLink = (link) => {
+    return router.pathname === link.href // Compare the router pathname with the link href
+  }
 
   return (
     <nav className='text-2xl'>
@@ -30,7 +50,7 @@ export default function Navbar() {
               <li key={link.name}>
                 <Link
                   className={`${
-                    router.pathname === link.href
+                    isActiveLink(link)
                       ? "text-[#2FCBEF]"
                       : "md:hover:text-[#9594F5] transition"
                   }`}
@@ -42,16 +62,16 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-        {/* Small Screens Icons*/}
+        {/* Small Screens Icons */}
         <span className='lg:hidden text-[#2FCBEF]'>
           <RxHamburgerMenu
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handleMenuClick}
             className={`${
               isOpen ? "hidden" : "cursor-pointer"
             } hover:animate-[bounce_1.5s_linear_1]`}
           />
           <AiOutlineClose
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={handleMenuClick}
             className={`${
               !isOpen ? "hidden" : "cursor-pointer"
             } hover:animate-[spin_1.5s_linear_1]`}
@@ -64,7 +84,7 @@ export default function Navbar() {
             <li key={link.name} className='border-b border-gray-700'>
               <Link
                 className={`${
-                  router.pathname === link.href
+                  isActiveLink(link)
                     ? "text-[#2FCBEF] bg-[#2a2a2a]"
                     : "md:hover:text-[#9594F5] transition"
                 } block pt-2 h-12`}
