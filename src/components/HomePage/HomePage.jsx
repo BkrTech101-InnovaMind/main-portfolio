@@ -3,10 +3,19 @@ import Link from "next/link"
 import { useState } from "react"
 import Typewriter from "typewriter-effect"
 
+/**
+ * Render the home page.
+ *
+ * @returns {JSX.Element} The rendered home page.
+ */
 export default function HomePage() {
+  // Define colors for the roles
   const colors = ["#9A99FF", "#2FCBEF", ""]
+  // Define hover colors for the roles
   const hoverColors = ["#E6DB74", "#E6DB74", "#2FCBEF"]
+  // Define state for background colors of roles
   const [bgColor, setBgColor] = useState({})
+  // Destructure sections from home_page object
   const {
     hero_section,
     about_me_section,
@@ -16,6 +25,7 @@ export default function HomePage() {
   } = home_page
   return (
     <section className='text-center'>
+      {/* Hero Section */}
       <div className='hero_section mt-24'>
         <h2 className='text-xl text-slate-200'>{hero_section.introduction}</h2>
         <h1 className='text-3xl md:text-[400%] lg:text-[700%] mt-10 flex justify-center'>
@@ -40,6 +50,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      {/* About Me Section */}
       <div id='about_me_section' className='about_me mt-28'>
         <div>
           <h1 className='text-3xl text-[#9A99FF]'>{"{/}"}</h1>
@@ -68,6 +79,7 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+      {/* Portfolio Section */}
       <div className='portfolio_section mt-28'>
         <div className='border-b-[1px] border-gray-600 pb-8'>
           <h1 className='text-3xl text-[#9A99FF]'>{"(!)"}</h1>
@@ -79,6 +91,7 @@ export default function HomePage() {
           </h2>
         </div>
       </div>
+      {/* Services Section */}
       <div className='services_section mt-28'>
         <div>
           <h1 className='text-3xl text-[#9A99FF]'>{"(!)"}</h1>
@@ -134,6 +147,7 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+      {/* Contact Me Section */}
       <div className='contact_me_section mt-28'>
         <div className='bg-hero-img-2 bg-fixed'>
           <div>
