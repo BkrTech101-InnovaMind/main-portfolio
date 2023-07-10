@@ -12,6 +12,7 @@ export default function HomePage() {
     about_me_section,
     portfolio_section,
     services_section,
+    contact_me_section,
   } = home_page
   return (
     <section className='text-center'>
@@ -132,6 +133,47 @@ export default function HomePage() {
             {"{all_services}"}
           </Link>
         </div>
+      </div>
+      <div className='contact_me_section mt-28'>
+        <div className='bg-hero-img-2 bg-fixed'>
+          <div>
+            <div className='pixels_effect'>
+              <h2 className='h2 py-36 lg:py-44'></h2>
+            </div>
+          </div>
+        </div>
+        <div className='mt-20'>
+          <h1 className='text-3xl text-[#9A99FF]'>{"{*}"}</h1>
+          <h1 className='text-slate-200 text-3xl md:text-[400%] lg:text-[700%] mt-8'>
+            {contact_me_section.title}
+          </h1>
+          <h2 className='w-[40%] mx-auto mt-10 font-medium text-lg'>
+            {contact_me_section.leading}
+          </h2>
+        </div>
+        <form action='' className='mt-12 w-full md:w-[80%] md:mx-auto'>
+          <input
+            type='text'
+            className='w-full bg-transparent border-b-2 block border-gray-600 focus:border-[#9A99FF] outline-none pb-4 placeholder-[#9A99FF] caret-[#9A99FF] transition-colors'
+            placeholder='   _name*'
+          />
+          <input
+            type='email'
+            className='w-full bg-transparent border-b-2 block border-gray-600 focus:border-[#9A99FF] outline-none pb-4 placeholder-[#9A99FF] caret-[#9A99FF] transition-colors'
+            placeholder='   _email*'
+          />
+          <textarea
+            rows={10}
+            className='w-full bg-transparent border-b-2 block border-gray-600 focus:border-[#9A99FF] outline-none pb-4 placeholder-[#9A99FF] caret-[#9A99FF] transition-colors'
+            placeholder='   _message*'
+          />
+          <button
+            className='px-8 py-3 bg-[#2FCBEF] text-zinc-100 mt-8'
+            type='submit'
+          >
+            {"{Send}"}
+          </button>
+        </form>
       </div>
     </section>
   )
