@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import Footer from "../Footer"
 import Navbar from "../Navbar"
 
 export default function Layout({ children }) {
@@ -9,10 +10,7 @@ export default function Layout({ children }) {
     const handleResize = () => {
       const childrenHeight = asideRef.current.scrollHeight
       setNumbers(
-        Array.from(
-          { length: Math.floor(childrenHeight / 21.6) },
-          (_, i) => i + 1
-        )
+        Array.from({ length: Math.floor(childrenHeight / 23) }, (_, i) => i + 1)
       )
     }
 
@@ -34,6 +32,7 @@ export default function Layout({ children }) {
         <main className='mt-10' ref={asideRef}>
           {children}
         </main>
+        <Footer />
       </span>
     </div>
   )
