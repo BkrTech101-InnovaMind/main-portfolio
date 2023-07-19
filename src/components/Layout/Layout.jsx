@@ -36,19 +36,23 @@ export default function Layout({ children }) {
   }, []) // Run the effect only once on mount
 
   return (
-    <div className='flex max-w-screen-2xl mx-auto'>
-      <aside className='border-r-[1px] border-gray-700 px-4 py-4'>
-        {numbers.map((number) => (
-          <h1 key={number}>{number}</h1> // Render the numbers in the aside element
-        ))}
-      </aside>
-      <span className='flex-1 pr-10 pt-5'>
-        <Navbar /> {/* Render the Navbar component */}
-        <main className='mt-10' ref={asideRef}>
-          {children} {/* Render the children */}
-        </main>
-        <Footer /> {/* Render the Footer component */}
-      </span>
+    <div className='max-w-screen-2xl mx-auto h-screen'>
+      <div className='flex'>
+        <div className='pr-3 pl-1 md:pr-6 md:pl-2 lg:pr-8 lg:pl-4 border-r-[1px] border-gray-700 py-4'>
+          <aside className='fixed'>
+            {numbers.map((number) => (
+              <h1 key={number}>{number}</h1> // Render the numbers in the aside element
+            ))}
+          </aside>
+        </div>
+        <span className='flex-1 pr-10 pt-5'>
+          <Navbar /> {/* Render the Navbar component */}
+          <main className='mt-10' ref={asideRef}>
+            {children} {/* Render the children */}
+          </main>
+        </span>
+      </div>
+      <Footer /> {/* Render the Footer component */}
     </div>
   )
 }
